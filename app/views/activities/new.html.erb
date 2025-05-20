@@ -1,0 +1,8 @@
+<%= simple_form_for [@activity] do |f|%>
+  <%= f.input :name, placeholder: "Enter name here..." %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :category %>
+  <%= f.input :description, placeholder: "Enter description here" %>
+  <%= f.input :location %>
+    <%= f.submit 'Create activity' %>
+<% end %>

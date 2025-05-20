@@ -1,0 +1,10 @@
+<h1>All activities</h1>
+<% @activity.each do |activity| %>
+  <%= activity.name %>
+  <%= activity.user_id %>
+  <%= activity.image_url %>
+  <%= activity.description %>
+  <%= activity.category %>
+  <%= activation.location %>
+  <%= link_to "View Activities", activity_path(activity) %>
+  <% end %>
