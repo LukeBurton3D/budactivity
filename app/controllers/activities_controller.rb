@@ -1,4 +1,25 @@
 class ActivitiesController < ApplicationController
+
+  def index
+    @activities = Activity.all
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {activity: activity}),
+        marker_html: render_to_string(partial: "marker", locals: {activity: activity}) # Pass the activity to the partial
+    }
+    end
+  end
+
+  def show
+    # raise
+    @activity = Activity.find(params[:id])
+    # we want to make a new booking on the show page
+    # @booking = Booking.new
+    # @booking.user = current_user
+  end
+
   def new
     @activity = Activity.new
   end
