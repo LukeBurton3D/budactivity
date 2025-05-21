@@ -10,20 +10,3 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
-
-
-.navbar {
-  background-color: white;
-  // padding top-bottom left-right
-  padding: 5px 20px;
-  img {
-    width: 80px;
-  }
-
-  a {
-    color: black;
-    &:hover {
-      color: rgb(4, 121, 134);
-    }
-  }
-}
