@@ -10,5 +10,5 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
   validates :age, numericality: { greater_than_or_equal_to: 18 }, presence: true
-  validates :description, presence: true, length: { in: 20..100 }
+  # validates :description, presence: true, length: { in: 20..100 }
 end

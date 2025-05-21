@@ -6,8 +6,9 @@ class ActivitiesController < ApplicationController
       {
         lat: activity.latitude,
         lng: activity.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {activity: activity})
-      }
+        info_window_html: render_to_string(partial: "info_window", locals: {activity: activity}),
+        marker_html: render_to_string(partial: "marker", locals: {activity: activity}) # Pass the activity to the partial
+    }
     end
   end
 
@@ -15,9 +16,8 @@ class ActivitiesController < ApplicationController
     # raise
     @activity = Activity.find(params[:id])
     # we want to make a new booking on the show page
-    @booking = @activity.user.booking.new
-    @booking.user = current_user
-    redirect_to activities_path
+    # @booking = Booking.new
+    # @booking.user = current_user
   end
-  
+
 end

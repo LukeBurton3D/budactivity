@@ -20,8 +20,8 @@ cities = ["Birmingham", "Machester", "Liverpool", "London", "Stoke on Trent", "B
 puts "Seeding users..."
 30.times do
   User.create!(
-    username: Faker::Internet.username,
-    password: Faker::Internet.password(min_length: 6),
+    username: Faker::Internet.unique.username,
+    password: "password",
     email: Faker::Internet.email,
     age: rand(18..80),
     city: cities[rand(0..cities.length)]
@@ -37,23 +37,23 @@ puts "Seeding activities..."
 categories.each do |category|
   if category == "Sports"
     10.times do
-      Activity.create!(name: Faker::Sport.sport, location: cities[rand(0..cities.length)], user: users)
+      Activity.create!(name: Faker::Sport.sport, location: cities[rand(0..cities.length)], user: users, category: category, location: cities.sample)
     end
   elsif category == "Social"
     10.times do
-      Activity.create!(name: Faker::Hobby.activity, location: cities[rand(0..cities.length)], user: users)
+      Activity.create!(name: Faker::Hobby.activity, location: cities[rand(0..cities.length)], user: users, category: category, location: cities.sample)
     end
   elsif category == "Creative"
-    Activity.create!(name: "Life Drawing", location: cities[rand(0..cities.length)], user: users)
-    Activity.create!(name: "Pottery Class", location: cities[rand(0..cities.length)], user: users)
-    Activity.create!(name: "Crafts", location: cities[rand(0..cities.length)], user: users)
-    Activity.create!(name: "Learn to Cook", location: cities[rand(0..cities.length)], user: users)
-    Activity.create!(name: "Paint Together", location: cities[rand(0..cities.length)], user: users)
+    Activity.create!(name: "Life Drawing", location: cities[rand(0..cities.length)], user: users, category: category, location: cities.sample)
+    Activity.create!(name: "Pottery Class", location: cities[rand(0..cities.length)], user: users, category: category, location: cities.sample)
+    Activity.create!(name: "Crafts", location: cities[rand(0..cities.length)], user: users, category: category, location: cities.sample)
+    Activity.create!(name: "Learn to Cook", location: cities[rand(0..cities.length)], user: users, category: category, location: cities.sample)
+    Activity.create!(name: "Paint Together", location: cities[rand(0..cities.length)], user: users, category: category, location: cities.sample)
   elsif category == "Music"
-    Activity.create!(name: "Live music", location: cities[rand(0..cities.length)], user: users)
-    Activity.create!(name: "Play an instrument together", location: cities[rand(0..cities.length)], user: users)
-    Activity.create!(name: "Learn to play an instrument", location: cities[rand(0..cities.length)], user: users)
-    Activity.create!(name: "Go to a music festival", location: cities[rand(0..cities.length)], user: users)
+    Activity.create!(name: "Live music", location: cities[rand(0..cities.length)], user: users, category: category, location: cities.sample)
+    Activity.create!(name: "Play an instrument together", location: cities[rand(0..cities.length)], user: users, category: category, location: cities.sample)
+    Activity.create!(name: "Learn to play an instrument", location: cities[rand(0..cities.length)], user: users, category: category, location: cities.sample)
+    Activity.create!(name: "Go to a music festival", location: cities[rand(0..cities.length)], user: users, category: category, location: cities.sample)
   end
 end
 
