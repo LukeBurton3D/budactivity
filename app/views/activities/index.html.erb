@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="text-center">Discover Activities</h1>
+
+  <div>
+    <% @activities.each do |activity| %>
+      <div>
+        <%= activity.image_url %>
+        <div>
+          <h4> <%= activity.name %></h4>
+            <p>
+              <%= truncate(activity.description, length: 50) %>
+            </p>
+            <p>
+              activity.category
+            </p>
+            <%# to do => replace with icon maybe ... big ones ? %>
+            <%= link_to "More Details", activity_path(activity), class= "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+
+
+  </div>
+
+
+
+
+
+</div>
