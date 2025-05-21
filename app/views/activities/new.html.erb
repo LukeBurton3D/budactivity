@@ -1,0 +1,8 @@
+<% categories = ["Sports", "Social", "Creative", "Music"] %>
+
+<%= simple_form_for @activity do |f| %>
+  <%= f.input :name, placeholder: "Enter name" %>
+  <%= f.input :location, placeholder: "Enter city" %>
+  <%= f.input :category, placeholder: "Category", collection: categories %>
+  <%= f.submit "Add category", class: "btn btn-primary" %>
+<% end %>
