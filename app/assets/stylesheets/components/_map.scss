@@ -1,8 +1,58 @@
-.mapboxgl-popup {
-  max-width: 200px;
-}
+// app/assets/stylesheets/components/_map.scss
+.map-container {
+  height: 500px;
+  position: relative;
 
-.mapboxgl-popup-content {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
+  // Style Mapbox's built-in controls
+  .mapboxgl-ctrl-top-right {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  // Search control container
+  .mapboxgl-ctrl-geocoder {
+    width: 250px;
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: white !important;
+
+    // Input field
+    input {
+      background-color: white;
+      color: #333;
+      height: 40px;
+      padding: 8px 12px;
+
+      &::placeholder {
+        color: #6c757d;
+      }
+    }
+
+    // Suggestions dropdown
+    .suggestions {
+      background-color: white;
+      border-radius: 0 0 4px 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+      .active > a {
+        background-color: #f8f9fa;
+      }
+    }
+  }
+
+  // Zoom controls
+  .mapboxgl-ctrl {
+    background-color: white !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+
+    button {
+      background-color: white;
+
+      &:hover {
+        background-color: #f8f9fa;
+      }
+    }
+  }
 }
