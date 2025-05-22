@@ -1,6 +1,8 @@
 
 <div class="activity-card card h-100">
-  <%= image_tag activity.image_url, class: "card-img-top" %>
+  <% if current_user.image_url %>
+    <%= image_tag activity.image_url, class: "card-img-top" %>
+   <% end %>
   <div class="card-body">
     <h5 class="card-title"><%= activity.name %></h5>
 
