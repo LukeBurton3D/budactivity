@@ -1,2 +1,10 @@
-<h2><%= activity.name %></h2>
-<p><%= activity.location %></p>
+<div>
+  <h2>📍<%= activity.location %></h2>
+</div>
+<div style= "background-color=rgb(176, 212, 202);">
+  <p><%= activity.description %></p>
+  <br>
+  <p><%= link_to activity_path(activity), class: "btn-show" do %>
+  <i class="fas fa-arrow-right"></i> View Details </p>
+  <% end %>
+</div>
