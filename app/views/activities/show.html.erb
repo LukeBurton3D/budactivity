@@ -1,15 +1,59 @@
-<div class="container">
-  <%# banner with image_url %>
-  <h1> <%= @activity.category %></h1>
-</div>
+<div class="container activity-show">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="display-5"><%= @activity.name %></h1>
+    <%= link_to activities_path, class: "btn btn-outline-secondary" do %>
+      <i class="fas fa-arrow-left me-2"></i>Back to Activities
+    <% end %>
+  </div>
 
-<div class="description">
-  <h4>Description</h4>
-  <p>
-    <%= @activity.description %>
-  </p>
-   <p>
-    <%# <%= @activity.location %>
-  </p>
+  <div class="activity-image-container mb-4 rounded-3 overflow-hidden shadow">
+    <%= image_tag @activity.image_url, class: "img-fluid w-100", alt: @activity.name %>
+  </div>
 
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="d-flex align-items-center gap-4 mb-4">
+        <div class="d-flex align-items-center text-muted">
+          <i class="fas fa-map-marker-alt text-primary me-2"></i>
+          <%= @activity.location %>
+        </div>
+        <div class="d-flex align-items-center text-muted">
+          <i class="far fa-calendar-alt text-primary me-2"></i>
+          <%= @activity.created_at.strftime("%B %d, %Y") %>
+        </div>
+      </div>
+
+      <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body">
+          <h3 class="h5 card-title">About this activity</h3>
+          <p class="card-text"><%= @activity.description %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card shadow-sm sticky-top" style="top: 20px;">
+        <div class="card-body">
+          <h3 class="h5 card-title">Details</h3>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span class="text-muted">Category</span>
+              <span class="badge bg-primary rounded-pill"><%= @activity.category %></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span class="text-muted">Posted</span>
+              <span><%= time_ago_in_words(@activity.created_at) %> ago</span>
+            </li>
+            <% if @activity.updated_at != @activity.created_at %>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="text-muted">Last updated</span>
+                <span><%= time_ago_in_words(@activity.updated_at) %> ago</span>
+              </li>
+            <% end %>
+          </ul>
+          <%= link_to "Book Now", "#", class: "btn btn-primary w-100 mt-3" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
