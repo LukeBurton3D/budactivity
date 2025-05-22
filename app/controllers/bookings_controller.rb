@@ -7,6 +7,13 @@ class BookingsController < ApplicationController
 
   def create
     @booking = @activity.bookings.new(booking_params)
+    @booking.user = current_user
+
+    if @booking.save
+      redirect_to new_activity_booking_path(@activity), notice: "Booking created!"
+    else
+      render :new
+    end
   end
 
   private
