@@ -1,5 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :set_activity
+  before_action :set_activity, only: [:new, :create]
+  before_action :authenticate_user!
+
+  def index
+    @bookings = current_user.bookings.includes(:activity)
+  end
 
   def new
     @booking = @activity.bookings.new

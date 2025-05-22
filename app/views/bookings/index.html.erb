@@ -1,0 +1,15 @@
+<h1>My Bookings</h1>
+
+<% if @bookings.any? %>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li>
+        <strong><%= booking.activity.name %></strong><br>
+        From: <%= booking.start_date %> to <%= booking.end_date %><br>
+
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You haven't made any bookings yet.</p>
+<% end %>
