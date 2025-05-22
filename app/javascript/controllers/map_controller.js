@@ -17,15 +17,19 @@ export default class extends Controller {
     //   container: this.element,
     //   style: "mapbox://styles/mapbox/streets-v10"
     // })
+
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/manier/cmaxybn6j00zj01s5ae531gg9" // <-- use your own!
       });
-    this.#addMarkersToMap()
-    this.#fitMapToMarkers()
 
-    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl }))
+       setTimeout(() => {
+      this.#addMarkersToMap()
+      this.#fitMapToMarkers()
+
+      this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl }))
+       }, 1400)
   }
   // private method in JavaScript are prepend with a #
   #addMarkersToMap() {

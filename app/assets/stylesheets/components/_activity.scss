@@ -1,0 +1,73 @@
+// .activity-show {
+//   .activity-image-container {
+//     height: 400px;
+//     background-color: #f8f9fa;
+
+//     img {
+//       height: 100%;
+//       width: 100%;
+//       object-fit: cover;
+//       object-position: center;
+//     }
+//   }
+
+//   @media (max-width: 768px) {
+//     .activity-image-container {
+//       height: 250px;
+//     }
+//   }
+// }
+
+// Activity Hero Section
+.activity-hero {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 2rem;
+
+  &-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+    z-index: 1;
+  }
+
+  .activity-title-button {
+    position: relative;
+    z-index: 2;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .activity-hero {
+    height: 200px;
+
+    .activity-title-button {
+      font-size: 1.5rem;
+      padding: 0.75rem 1.5rem;
+    }
+  }
+}

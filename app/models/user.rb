@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-   has_many :activities
+  has_many :activities
   has_many :bookings
   # QUESTIONS
   # has_many :activities, through: :bookings
