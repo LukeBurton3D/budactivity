@@ -1,8 +1,13 @@
-<% categories = ["Sports", "Social", "Creative", "Music"] %>
+<div class="container">
+  <div class="row">
+    <% categories = ["Sports", "Social", "Creative", "Music"] %>
 
-<%= simple_form_for @activity do |f| %>
-  <%= f.input :name, placeholder: "Enter name" %>
-  <%= f.input :location, placeholder: "Enter city" %>
-  <%= f.input :category, placeholder: "Category", collection: categories %>
-  <%= f.submit "Add category", class: "btn btn-primary" %>
-<% end %>
+    <%= simple_form_for @activity do |f| %>
+      <%= f.input :name, placeholder: "Enter name" %>
+      <%= f.input :location, placeholder: "Enter city" %>
+      <%= f.input :category, placeholder: "Category", collection: categories %>
+      <%= f.input :image_url, placeholder: "Insert image URL" %>
+      <%= f.submit "Add category", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
