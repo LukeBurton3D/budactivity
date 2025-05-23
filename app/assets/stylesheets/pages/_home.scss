@@ -1,1 +1,118 @@
-// Specific CSS for your home-page
+.pages-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+.carousel-item {
+  background-size: cover;
+  height: 80vh;
+  img {
+    // height: 700px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+ .title-container {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    justify-content: center;
+  }
+ }
+
+.page-title {
+  // background-color: rgba($color: white, $alpha: 1);
+  background-image: linear-gradient(90deg,rgba(0, 0, 0, 0) 47%, rgba(255, 255, 255, 1) 50%, rgba(0, 0, 0, 0) 53%);
+  padding: 4px;
+  color: black;
+  height: 120px;
+  width: 1000%;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: black;
+}
+
+.container {
+  background-color: black;
+}
+
+.btn {
+  background-color: #f77f00;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 16px;
+}
+
+.card-category {
+  align-items: center;
+  background-color: #ff00009c;
+}
+
+.inner-card {
+  color: white;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+h2, h3, h4, h5 {
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+}
+
+.sub {
+  color: white;
+  margin: auto;
+  width: 75%;
+  padding: 3px;
+  text-align: center;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
