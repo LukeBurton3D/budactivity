@@ -30,6 +30,9 @@
     </div>
   </div>
 
+
+  <%# user reviews %>
+
   <div class="sub">
     <hr>
     <h2>User Reviews</h2>
@@ -44,27 +47,80 @@
           <% user = User.all.sample %>
           <h4><%= user.username %></h4>
           <br>
-          <h3><%= "⭐⭐⭐⭐⭐" %></h3>
+          <h3>
+            <% rating = 5.0 %>
+            <% stars_full = rating.floor %>
+            <% star_half = rating - stars_full >= 0.5 %>
+            <% stars_empty = 5 - stars_full - (star_half ? 1 : 0) %>
+
+            <% stars_full.times do %>
+              <i class="fa-solid fa-star text-warning"></i>
+            <% end %>
+
+            <% if star_half %>
+              <i class="fa-solid fa-star-half-stroke text-warning"></i>
+            <% end %>
+
+            <% stars_empty.times do %>
+              <i class="fa-regular fa-star text-warning"></i>
+            <% end %>
+          </h3>
           <br>
           <h5><%= '"I had a great time!"' %></h5>
         </div>
       </div>
+
       <div class="card-category" style="background-image: white">
         <div class="inner-card">
           <% user = User.all.sample %>
           <h4><%= user.username %></h4>
           <br>
-          <h3><%= "⭐⭐⭐⭐⭐" %></h3>
+          <h3>
+            <% rating = 4.5 %>
+            <% stars_full = rating.floor %>
+            <% star_half = rating - stars_full >= 0.5 %>
+            <% stars_empty = 5 - stars_full - (star_half ? 1 : 0) %>
+
+            <% stars_full.times do %>
+              <i class="fa-solid fa-star text-warning"></i>
+            <% end %>
+
+            <% if star_half %>
+              <i class="fa-solid fa-star-half-stroke text-warning"></i>
+            <% end %>
+
+            <% stars_empty.times do %>
+              <i class="fa-regular fa-star text-warning"></i>
+            <% end %>
+          </h3>
           <br>
           <h5><%= '"I would defo use again!"' %></h5>
         </div>
       </div>
+
       <div class="card-category" style="background-image: white">
         <div class="inner-card">
           <% user = User.all.sample %>
           <h4><%= user.username %></h4>
           <br>
-          <h3><%= "⭐⭐⭐⭐⭐" %></h3>
+          <h3>
+            <% rating = 4.0 %>
+            <% stars_full = rating.floor %>
+            <% star_half = rating - stars_full >= 0.5 %>
+            <% stars_empty = 5 - stars_full - (star_half ? 1 : 0) %>
+
+            <% stars_full.times do %>
+              <i class="fa-solid fa-star text-warning"></i>
+            <% end %>
+
+            <% if star_half %>
+              <i class="fa-solid fa-star-half-stroke text-warning"></i>
+            <% end %>
+
+            <% stars_empty.times do %>
+              <i class="fa-regular fa-star text-warning"></i>
+            <% end %>
+          </h3>
           <br>
           <h5><%= '"I made some great new buddies!"' %></h5>
         </div>
