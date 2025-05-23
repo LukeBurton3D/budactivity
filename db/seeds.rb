@@ -10,6 +10,10 @@
 
 require 'faker'
 
+puts "Cleaning DB..."
+Activity.destroy_all
+User.destroy_all
+
 cities = ["Birmingham", "Machester", "Paris", "London", "Berlin", "Rome", "Amsterdam",
 "Miami", "San Francisco", "Tokyo", "Helsinki", "Bern", "Kyiv", "Rio de Janeiro", "Stuttgart", "Budapest",
 "Cape Town", "Beijing", "Sydney", "Belfast"]
@@ -25,7 +29,7 @@ puts "Seeding users..."
   )
 end
 
-User.create!(username: "Mindmaze", password: "password", email: "Mindmaze@Mindmaze.com", age: 36, city: "London")
+User.create!(username: "Mindmaze", password: "password", email: "Mindmaze@Mindmaze.com", age: 36, city: "London", image_url: "https://static.wikia.nocookie.net/itsalwayssunny/images/0/0a/Square-Frank-Cheesy.jpg/revision/latest?cb=20110925015917")
 
 categories = ["Sports", "Social", "Creative", "Music"]
 users = User.all.sample
