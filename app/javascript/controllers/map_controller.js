@@ -20,7 +20,7 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/manier/cmaxybn6j00zj01s5ae531gg9"
+      style: "mapbox://styles/manier/cmb0rdtga00fg01s9e5bj5bux"
       });
 
       //  setTimeout(() => {

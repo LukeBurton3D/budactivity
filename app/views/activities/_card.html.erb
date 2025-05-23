@@ -1,7 +1,8 @@
-<div class="activity-card card h-100 position relative">
+<div class="activity-card card h-100 position-relative">
 
-  <div class="card-avatar-container">
-    <div class="position-relative">
+  <!-- Top-right avatar -->
+  <div class="card-avatar-container avatar-top-right">
+    <div class="avatar-wrapper">
       <%= image_tag activity.user.image_url, class: "avatar-verified", alt: "User avatar" %>
       <div class="verified-badge">
         <i class="fas fa-check-circle"></i>
@@ -11,7 +12,7 @@
 
   <% if current_user.image_url %>
     <%= image_tag activity.image_url, class: "card-img-top" %>
-   <% end %>
+  <% end %>
 
   <div class="card-body">
     <h5 class="card-title"><%= activity.name %></h5>
@@ -37,13 +38,17 @@
           <%= time_ago_in_words(activity.created_at) %> ago
         </small>
         <ul class="dropdown-menu">
-          <li><span class="dropdown-item-text">
-            Posted: <%= activity.created_at.strftime("%B %d, %Y at %l:%M %p") %>
-          </span></li>
+          <li>
+            <span class="dropdown-item-text">
+              Posted: <%= activity.created_at.strftime("%B %d, %Y at %l:%M %p") %>
+            </span>
+          </li>
           <% if activity.updated_at != activity.created_at %>
-            <li><span class="dropdown-item-text">
-              Updated: <%= activity.updated_at.strftime("%B %d, %Y at %l:%M %p") %>
-            </span></li>
+            <li>
+              <span class="dropdown-item-text">
+                Updated: <%= activity.updated_at.strftime("%B %d, %Y at %l:%M %p") %>
+              </span>
+            </li>
           <% end %>
         </ul>
       </div>
