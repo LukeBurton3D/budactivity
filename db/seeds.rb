@@ -46,7 +46,7 @@ parsed_user.each do |usr|
   photo_url = usr["urls"]
   user = User.create!(
     username: users_data["username"],
-    image_url: photo_url["regular"],
+    image_url: photo_url["small"],
     description: users_data["bio"],
     city: users_data["location"] || cities[rand(0..cities.length)],
     email: Faker::Internet.unique.email,
