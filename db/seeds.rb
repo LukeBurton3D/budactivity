@@ -14,9 +14,10 @@ puts "Cleaning DB..."
 Activity.destroy_all
 User.destroy_all
 
-cities = ["Birmingham", "Machester", "Paris", "London", "Berlin", "Rome", "Amsterdam",
-"Miami", "San Francisco", "Tokyo", "Helsinki", "Bern", "Kyiv", "Rio de Janeiro", "Stuttgart", "Budapest",
-"Cape Town", "Beijing", "Sydney", "Belfast"]
+cities = ["Birmingham", "Manchester", "Paris", "London", "Berlin", "Rome", "Amsterdam",
+          "Miami", "San Francisco", "Tokyo", "Helsinki", "Bern", "Kyiv", "Rio de Janeiro", "Stuttgart", "Budapest",
+          "Cape Town", "Beijing", "Sydney", "Belfast"
+        ]
 
 # puts "Seeding users..."
 # 30.times do
