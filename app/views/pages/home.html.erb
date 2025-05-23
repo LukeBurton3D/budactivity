@@ -44,7 +44,7 @@
         <h4><%= user.username %></h4>
         <br>
         <h3>
-          <% rating = 5.0 %> <%# You can change this number for different cards %>
+          <% rating = 5.0 %> 
           <% stars_full = rating.floor %>
           <% star_half = rating - stars_full >= 0.5 %>
           <% stars_empty = 5 - stars_full - (star_half ? 1 : 0) %>
