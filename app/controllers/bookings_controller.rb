@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to new_activity_booking_path(@activity), notice: "Booking created!"
+      redirect_to bookings_path, notice: "Booking created!"
     else
       render :new
     end

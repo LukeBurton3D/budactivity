@@ -1,0 +1,11 @@
+<div class="col-md-6 col-lg-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title"><%= booking.activity.name %></h5>
+      <p class="card-text">
+        <strong>From:</strong> <%= booking.start_date.strftime("%B %d, %Y") %><br>
+        <strong>To:</strong> <%= booking.end_date.strftime("%B %d, %Y") %><br>
+      </p>
+    </div>
+  </div>
+</div>

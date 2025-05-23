@@ -1,15 +1,10 @@
-<h1>My Bookings</h1>
-
-<% if @bookings.any? %>
-  <ul>
-    <% @bookings.each do |booking| %>
-      <li>
-        <strong><%= booking.activity.name %></strong><br>
-        From: <%= booking.start_date %> to <%= booking.end_date %><br>
-
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>You haven't made any bookings yet.</p>
-<% end %>
+<div class=m-5>
+  <h1>My Next Planned Activities!</h1>
+  <% if @bookings.any? %>
+    <div class="row mt-5">
+      <%= render partial: "booking_card", collection: @bookings, as: :booking %>
+    </div>
+  <% else %>
+    <p>You haven't made any bookings yet.</p>
+  <% end %>
+</div>
