@@ -1,11 +1,12 @@
 <h1>Book Now</h1>
 
-<%= form_with model: [@activity, @booking], local: true do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :date %>
-  <%= f.date_select :date %>
-  <%= f.submit "Book Now" %>
+<%= simple_form_for [@activity, @booking] do |f| %>
+ <div class="form-inputs">
+    <%= f.input :start_date, as: :date, required: true %>
+    <%= f.input :end_date, as: :date, required: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Book Now" %>
+  </div>
 <% end %>

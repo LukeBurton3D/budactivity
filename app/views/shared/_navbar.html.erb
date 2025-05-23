@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mpadeco.com%2Fresize%2F500x500%2Fzc%2F2%2Ff%2F0%2Fsrc%2Fsites%2Fmpadeco%2Ffiles%2Fproducts%2F575d2b6339c2c0331c3d20ab8e829627.png&f=1&nofb=1&ipt=f0889ce591c6a68df83bb4f5089ecad3c9fd8edb9b014b410c6ed04173dfa670", style: "width: 110px" %>
       <%# <image_tag class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= image_path "activities-banner.jpg" %>
 
@@ -14,16 +14,22 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Activites", activities_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "My Bookings", bookings_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Favourites", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <% if current_user.image_url %>
-            <%= image_tag current_user.image_url, class: "avatar-square", alt: "dropdown menu" %>
-             <% end %>
+          <% if current_user.image_url %>
+              <%= image_tag current_user.image_url, class: "avatar-square", alt: "dropdown menu" %>
+          <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Profile", "#", class: "dropdown-item" %>

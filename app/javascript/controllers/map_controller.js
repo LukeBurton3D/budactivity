@@ -13,10 +13,10 @@ export default class extends Controller {
     console.log(this.apiKeyValue)
     mapboxgl.accessToken = this.apiKeyValue
 
-    // this.map = new mapboxgl.Map({
-    //   container: this.element,
-    //   style: "mapbox://styles/mapbox/streets-v10"
-    // })
+    this.map = new mapboxgl.Map({
+      container: this.element,
+      style: "mapbox://styles/mapbox/streets-v10"
+    })
 
     this.map = new mapboxgl.Map({
       container: this.element,
@@ -31,7 +31,7 @@ export default class extends Controller {
         mapboxgl: mapboxgl }))
       //  }, 1400)
   }
-  // private method in JavaScript are prepend with a #
+  // // private method in JavaScript are prepend with a #
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
