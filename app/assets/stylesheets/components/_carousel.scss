@@ -2,3 +2,49 @@
   margin-bottom: 30px;
   position: relative;
 }
+
+.activity-banner-container {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.activity-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to right, rgba(182, 182, 85, 0.4), rgba(0, 0, 0, 0.4));
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  padding: 0.5rem 0; // 🔥 reduce vertical padding
+}
+
+.activity-banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem; // space between logo and button
+}
+
+.activity-logo {
+  max-height: 50px;
+  width: auto;
+}
+
+
+.activity-btn {
+  background-color: #169c8c;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  border: none;
+
+  &:hover {
+    background-color: #0f766e;
+  }
+}
